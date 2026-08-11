@@ -3,410 +3,356 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelVault — Juegos para PC</title>
+<title>Patricio Rey y sus Redonditos de Ricota</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="logo">PIXEL<span>VAULT</span></div>
-  <nav class="nav-links">
-    <a href="#catalogo">Catálogo</a>
-    <a href="#ofertas">Ofertas</a>
-    <a href="#soporte">Soporte</a>
-  </nav>
+<nav class="navbar">
+  <div class="nav-logo">P.R. <span>x</span> R2</div>
+  <div class="nav-links">
+    <a href="#historia">Historia</a>
+    <a href="#integrantes">Integrantes</a>
+    <a href="#discografia">Discografía</a>
+    <a href="#legado">Legado</a>
+  </div>
+</nav>
 
-  <div class="cart-wrapper">
-    <button class="cart" id="cart" onclick="toggleCarrito()">
-      <span class="cart-icon">🎮</span>
-      <span class="cart-count" id="cartCount">0</span>
-    </button>
-
-    <div class="cart-dropdown" id="cartDropdown">
-      <h4>Tu carrito</h4>
-      <ul class="cart-list" id="cartList">
-        <li class="cart-empty">Todavía no agregaste nada.</li>
-      </ul>
-      <div class="cart-total-row">
-        <span>Total</span>
-        <span id="cartTotal">$0</span>
-      </div>
-      <button class="btn-clear" onclick="vaciarCarrito()">Vaciar carrito</button>
+<header class="hero">
+  <div class="hero-moon"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">La Plata · 1976 — 2001</p>
+    <h1>PATRICIO REY <br>Y SUS REDONDITOS <br>DE RICOTA</h1>
+    <p class="hero-sub">La banda que convirtió el under en culto masivo, sin pisar nunca un canal de televisión. Rock, poesía críptica y una relación con el público que no se parece a ninguna otra en el rock argentino.</p>
+    <div class="hero-buttons">
+      <a href="#historia" class="btn-primary">Conocer la historia</a>
+      <a href="#discografia" class="btn-outline">Ver discografía</a>
     </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-text">
-    <p class="eyebrow">// biblioteca digital</p>
-    <h1>Insertá ficha.<br>Empezá a jugar.</h1>
-    <p class="hero-sub">Descarga instantánea, sin cajas físicas, sin esperar el envío. Tu próximo juego está a un clic.</p>
-    <a href="#catalogo" class="btn-primary">Ver catálogo</a>
+<section class="intro-strip">
+  <div class="strip-item">
+    <span class="strip-number">25</span>
+    <span class="strip-label">años de banda</span>
   </div>
-  <div class="hero-cartridge">
-    <div class="cartridge-shape big"></div>
+  <div class="strip-item">
+    <span class="strip-number">10</span>
+    <span class="strip-label">discos de estudio</span>
+  </div>
+  <div class="strip-item">
+    <span class="strip-number">0</span>
+    <span class="strip-label">entrevistas en TV masiva</span>
+  </div>
+  <div class="strip-item">
+    <span class="strip-number">1</span>
+    <span class="strip-label">fenómeno sin precedentes</span>
   </div>
 </section>
 
-<section class="catalogo" id="catalogo">
-  <div class="catalogo-header">
-    <h2>Catálogo</h2>
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Buscar juego..." oninput="filtrarJuegos()">
-      <button class="btn-search" onclick="mostrarTodos()">Ver todos</button>
-    </div>
+<section class="historia" id="historia">
+  <div class="section-header">
+    <p class="eyebrow">// la historia</p>
+    <h2>Del sótano de La Plata al estadio</h2>
   </div>
 
-  <p class="no-results" id="noResults" style="display:none;">No encontramos ningún juego con ese nombre.</p>
+  <p class="historia-intro">
+    Todo arranca a mediados de los 70, en plena dictadura, en un sótano de la calle Rodrigo en La Plata. Ahí un grupo de artistas —herederos de La Cofradía de la Flor Solar, una comunidad hippie que ya había hecho ruido en el primer festival BA Rock— empieza a montar espectáculos que mezclaban teatro, música y clima under. No eran, en un principio, una banda de rock: eran una troupe.
+  </p>
 
-  <div class="grid" id="gameGrid">
+  <div class="timeline">
 
-    <article class="game-card" data-nombre="resident evil 4" data-precio="7499">
-      <div class="cover cover-1">
-        <img src="images/resident-evil-4.jpg" alt="Resident Evil 4" onerror="this.style.display='none'">
-        <span class="tag">Terror</span>
+    <div class="timeline-item">
+      <div class="timeline-year">1976</div>
+      <div class="timeline-content">
+        <h3>El sótano de Pasaje Rodrigo</h3>
+        <p>Carlos "Indio" Solari, Eduardo "Skay" Beilinson y Carmen "Poli" Castro arman un espectáculo colectivo en La Plata: teatro, ballet y música en el mismo escenario, con redonditos de ricota reales repartidos entre el público. De ahí sale el nombre.</p>
       </div>
-      <div class="card-body">
-        <h3>Resident Evil 4</h3>
-        <p class="meta">Survival horror · Capcom</p>
-        <div class="price-row">
-          <span class="price">$7.499</span>
-          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
-        </div>
-      </div>
-    </article>
+    </div>
 
-    <article class="game-card" data-nombre="hogwarts legacy" data-precio="8999">
-      <div class="cover cover-2">
-        <img src="images/hogwarts-legacy.jpg" alt="Hogwarts Legacy" onerror="this.style.display='none'">
-        <span class="tag">RPG</span>
+    <div class="timeline-item">
+      <div class="timeline-year">1978-80</div>
+      <div class="timeline-content">
+        <h3>Circuito under</h3>
+        <p>El grupo, que llegó a tener más de una decena de integrantes rotando en escena, empieza a tocar en teatros under de La Plata y Capital Federal. La formación se estabiliza de a poco alrededor de Solari y Skay.</p>
       </div>
-      <div class="card-body">
-        <h3>Hogwarts Legacy</h3>
-        <p class="meta">Mundo abierto · WB Games</p>
-        <div class="price-row">
-          <span class="price">$8.999</span>
-          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
-        </div>
-      </div>
-    </article>
+    </div>
 
-    <article class="game-card" data-nombre="elden ring" data-precio="9499">
-      <div class="cover cover-3">
-        <img src="images/elden-ring.jpg" alt="Elden Ring" onerror="this.style.display='none'">
-        <span class="tag">RPG</span>
+    <div class="timeline-item">
+      <div class="timeline-year">1982</div>
+      <div class="timeline-content">
+        <h3>Primer demo profesional</h3>
+        <p>Graban en RCA su primer demo, con temas como "Mariposa Pontiac" y "Superlógico", que empiezan a circular en la escena under de Buenos Aires y les dan los primeros seguidores fieles.</p>
       </div>
-      <div class="card-body">
-        <h3>Elden Ring</h3>
-        <p class="meta">Souls-like · FromSoftware</p>
-        <div class="price-row">
-          <span class="price">$9.499</span>
-          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
-        </div>
-      </div>
-    </article>
+    </div>
 
-    <article class="game-card" data-nombre="grand theft auto v" data-precio="5999">
-      <div class="cover cover-4">
-        <img src="images/gta-v.jpg" alt="Grand Theft Auto V" onerror="this.style.display='none'">
-        <span class="tag">Acción</span>
+    <div class="timeline-item">
+      <div class="timeline-year">1985</div>
+      <div class="timeline-content">
+        <h3>Gulp!, el debut</h3>
+        <p>Sale su primer álbum de estudio, editado de forma completamente independiente por su propio sello, Patricio Rey Discos. Marca la política que la banda mantendría siempre: nada de discográficas grandes, nada de TV.</p>
       </div>
-      <div class="card-body">
-        <h3>Grand Theft Auto V</h3>
-        <p class="meta">Mundo abierto · Rockstar</p>
-        <div class="price-row">
-          <span class="price">$5.999</span>
-          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
-        </div>
-      </div>
-    </article>
+    </div>
 
-    <article class="game-card" data-nombre="call of duty black ops 6" data-precio="10499">
-      <div class="cover cover-5">
-        <img src="images/cod-bo6.jpg" alt="Call of Duty Black Ops 6" onerror="this.style.display='none'">
-        <span class="tag">Shooter</span>
+    <div class="timeline-item">
+      <div class="timeline-year">1986</div>
+      <div class="timeline-content">
+        <h3>Oktubre</h3>
+        <p>El disco que los explota masivamente. Con una estética inspirada en la Revolución de Octubre y una sonoridad influenciada por el post-punk y el new wave, se convierte en un clásico instantáneo y en la postal visual más asociada a la banda: rojo y negro.</p>
       </div>
-      <div class="card-body">
-        <h3>Call of Duty: Black Ops 6</h3>
-        <p class="meta">Multijugador · Activision</p>
-        <div class="price-row">
-          <span class="price">$10.499</span>
-          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
-        </div>
-      </div>
-    </article>
+    </div>
 
-    <article class="game-card" data-nombre="cyberpunk 2077" data-precio="7999">
-      <div class="cover cover-6">
-        <img src="images/cyberpunk-2077.jpg" alt="Cyberpunk 2077" onerror="this.style.display='none'">
-        <span class="tag">RPG</span>
+    <div class="timeline-item">
+      <div class="timeline-year">1988-91</div>
+      <div class="timeline-content">
+        <h3>Consagración</h3>
+        <p>Con Un Baión para el Ojo Idiota, ¡Bang! ¡Bang!... Estás Liquidado y La Mosca y la Sopa, la banda pasa de los teatros a llenar estadios enteros, siempre sin dar notas en televisión ni firmar con sellos multinacionales.</p>
       </div>
-      <div class="card-body">
-        <h3>Cyberpunk 2077</h3>
-        <p class="meta">Mundo abierto · CD Projekt</p>
-        <div class="price-row">
-          <span class="price">$7.999</span>
-          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
-        </div>
-      </div>
-    </article>
+    </div>
 
-    <article class="game-card" data-nombre="god of war ragnarok" data-precio="8499">
-      <div class="cover cover-1">
-        <img src="images/god-of-war-ragnarok.jpg" alt="God of War Ragnarök" onerror="this.style.display='none'">
-        <span class="tag">Acción</span>
+    <div class="timeline-item">
+      <div class="timeline-year">1996-2000</div>
+      <div class="timeline-content">
+        <h3>Los últimos discos</h3>
+        <p>Luzbelito, Último Bondi a Finisterre y Momo Sampler cierran la discografía de estudio. Los recitales de esta etapa reúnen a decenas de miles de personas por show, con un fanatismo que ya es parte del folclore del rock argentino.</p>
       </div>
-      <div class="card-body">
-        <h3>God of War Ragnarök</h3>
-        <p class="meta">Aventura · Santa Monica</p>
-        <div class="price-row">
-          <span class="price">$8.499</span>
-          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
-        </div>
-      </div>
-    </article>
+    </div>
 
-    <article class="game-card" data-nombre="ea sports fc 25" data-precio="6499">
-      <div class="cover cover-4">
-        <img src="images/ea-fc-25.jpg" alt="EA Sports FC 25" onerror="this.style.display='none'">
-        <span class="tag">Deportes</span>
+    <div class="timeline-item">
+      <div class="timeline-year">2001</div>
+      <div class="timeline-content">
+        <h3>El final</h3>
+        <p>La banda se separa. Solari continúa como solista con Los Fundamentalistas del Aire Acondicionado; Skay arma su propia banda solista. Los Redondos nunca vuelven a tocar juntos.</p>
       </div>
-      <div class="card-body">
-        <h3>EA Sports FC 25</h3>
-        <p class="meta">Fútbol · EA</p>
-        <div class="price-row">
-          <span class="price">$6.499</span>
-          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
-        </div>
-      </div>
-    </article>
+    </div>
 
   </div>
 </section>
 
-<section class="ofertas" id="ofertas">
-  <div class="catalogo-header">
-    <h2>Ofertas</h2>
+<section class="integrantes" id="integrantes">
+  <div class="section-header">
+    <p class="eyebrow">// la banda</p>
+    <h2>Los pilares y quienes pasaron por Redondos</h2>
   </div>
-  <p class="soporte-sub">Precio caído por tiempo limitado. Se llevan el descuento al momento de comprar.</p>
 
-  <div class="grid">
+  <div class="miembros-grid">
 
-    <article class="game-card" data-precio="4499">
-      <div class="cover cover-3">
-        <img src="images/elden-ring.jpg" alt="Elden Ring" onerror="this.style.display='none'">
-        <span class="tag oferta-tag">-40%</span>
+    <article class="miembro-card destacado">
+      <div class="miembro-foto foto-1">
+        <img src="images/indio-solari.jpg" alt="Indio Solari" onerror="this.style.display='none'">
       </div>
-      <div class="card-body">
-        <h3>Elden Ring</h3>
-        <p class="meta">Souls-like · FromSoftware</p>
-        <div class="price-row">
-          <div class="price-oferta">
-            <span class="price-old">$9.499</span>
-            <span class="price">$4.499</span>
-          </div>
-          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
-        </div>
+      <div class="miembro-info">
+        <h3>Carlos "Indio" Solari</h3>
+        <p class="miembro-rol">Voz y letras</p>
+        <p class="miembro-desc">La voz y la pluma detrás de las letras más crípticas y citadas del rock argentino. Co-fundador de la banda junto a Skay, lidera el proyecto desde el sótano de La Plata hasta el final en 2001.</p>
       </div>
     </article>
 
-    <article class="game-card" data-precio="3999">
-      <div class="cover cover-6">
-        <img src="images/cyberpunk-2077.jpg" alt="Cyberpunk 2077" onerror="this.style.display='none'">
-        <span class="tag oferta-tag">-50%</span>
+    <article class="miembro-card destacado">
+      <div class="miembro-foto foto-2">
+        <img src="images/skay-beilinson.jpg" alt="Skay Beilinson" onerror="this.style.display='none'">
       </div>
-      <div class="card-body">
-        <h3>Cyberpunk 2077</h3>
-        <p class="meta">Mundo abierto · CD Projekt</p>
-        <div class="price-row">
-          <div class="price-oferta">
-            <span class="price-old">$7.999</span>
-            <span class="price">$3.999</span>
-          </div>
-          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
-        </div>
+      <div class="miembro-info">
+        <h3>Eduardo "Skay" Beilinson</h3>
+        <p class="miembro-rol">Guitarra y composición</p>
+        <p class="miembro-desc">El otro pilar fundacional. Su guitarra define el sonido de la banda a lo largo de toda su carrera, desde los climas post-punk de Oktubre hasta el blues rock de los discos finales.</p>
       </div>
     </article>
 
-    <article class="game-card" data-precio="2999">
-      <div class="cover cover-4">
-        <img src="images/gta-v.jpg" alt="Grand Theft Auto V" onerror="this.style.display='none'">
-        <span class="tag oferta-tag">-50%</span>
+    <article class="miembro-card">
+      <div class="miembro-foto foto-3">
+        <img src="images/semilla-bucciarelli.jpg" alt="Semilla Bucciarelli" onerror="this.style.display='none'">
       </div>
-      <div class="card-body">
-        <h3>Grand Theft Auto V</h3>
-        <p class="meta">Mundo abierto · Rockstar</p>
-        <div class="price-row">
-          <div class="price-oferta">
-            <span class="price-old">$5.999</span>
-            <span class="price">$2.999</span>
-          </div>
-          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
-        </div>
+      <div class="miembro-info">
+        <h3>Semilla Bucciarelli</h3>
+        <p class="miembro-rol">Bajo</p>
+        <p class="miembro-desc">Se suma en 1982 y se queda hasta el final. Su bajo es una de las bases más reconocibles del sonido Redondo en la etapa de mayor popularidad de la banda.</p>
       </div>
+    </article>
+
+    <article class="miembro-card">
+      <div class="miembro-foto foto-4">
+        <img src="images/walter-sidotti.jpg" alt="Walter Sidotti" onerror="this.style.display='none'">
+      </div>
+      <div class="miembro-info">
+        <h3>Walter "Chiflo" Sidotti</h3>
+        <p class="miembro-rol">Batería</p>
+        <p class="miembro-desc">Baterista estable desde 1987 hasta la disolución del grupo, sostiene el pulso rítmico de la etapa más masiva de la banda.</p>
+      </div>
+    </article>
+
+    <article class="miembro-card">
+      <div class="miembro-foto foto-5">
+        <img src="images/sergio-dawi.jpg" alt="Sergio Dawi" onerror="this.style.display='none'">
+      </div>
+      <div class="miembro-info">
+        <h3>Sergio Dawi</h3>
+        <p class="miembro-rol">Saxo, armónica y piano</p>
+        <p class="miembro-desc">Aporta los vientos y teclados que le dan color a canciones clave de la segunda mitad de la discografía.</p>
+      </div>
+    </article>
+
+    <article class="miembro-card">
+      <div class="miembro-foto foto-6">
+        <img src="images/poli-castro.jpg" alt="Poli Castro" onerror="this.style.display='none'">
+      </div>
+      <div class="miembro-info">
+        <h3>Carmen "La Negra Poli" Castro</h3>
+        <p class="miembro-rol">Manager y alma mater</p>
+        <p class="miembro-desc">Tercer pilar fundacional junto a Solari y Skay. Su rol como manager fue clave para sostener la independencia de la banda frente a la industria discográfica.</p>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="otros-integrantes">
+    <h4>También formaron parte de la banda en distintas etapas</h4>
+    <ul class="chips">
+      <li>Willy Crook</li>
+      <li>Tito Fargo</li>
+      <li>Piojo Ávalos</li>
+      <li>Ricardo "Rocambole" Cohen (arte)</li>
+      <li>Conejo Jolivet</li>
+      <li>Roddy Castro</li>
+      <li>Hernán Aramberri</li>
+      <li>César "El Pipa" Barboza</li>
+    </ul>
+  </div>
+</section>
+
+<section class="discografia" id="discografia">
+  <div class="section-header">
+    <p class="eyebrow">// la obra</p>
+    <h2>Discografía completa</h2>
+  </div>
+
+  <div class="discos-grid">
+
+    <article class="disco-card">
+      <div class="disco-tapa tapa-1">
+        <img src="images/gulp.jpg" alt="Gulp!" onerror="this.style.display='none'">
+      </div>
+      <h3>Gulp!</h3>
+      <p class="disco-año">1985</p>
+      <p class="disco-desc">El debut, autoeditado. Marca desde el arranque la política de independencia total de la banda respecto a las discográficas.</p>
+    </article>
+
+    <article class="disco-card destacado-disco">
+      <div class="disco-tapa tapa-2">
+        <img src="images/oktubre.jpg" alt="Oktubre" onerror="this.style.display='none'">
+      </div>
+      <h3>Oktubre</h3>
+      <p class="disco-año">1986</p>
+      <p class="disco-desc">El disco más vendido de su carrera y el que define para siempre la estética rojo y negro de la banda. Elegido varias veces como uno de los mejores discos del rock nacional.</p>
+    </article>
+
+    <article class="disco-card">
+      <div class="disco-tapa tapa-3">
+        <img src="images/baion-ojo-idiota.jpg" alt="Un Baión para el Ojo Idiota" onerror="this.style.display='none'">
+      </div>
+      <h3>Un Baión para el Ojo Idiota</h3>
+      <p class="disco-año">1988</p>
+      <p class="disco-desc">Consolida el crecimiento de convocatoria de la banda, que ya empieza a llenar recintos cada vez más grandes.</p>
+    </article>
+
+    <article class="disco-card">
+      <div class="disco-tapa tapa-4">
+        <img src="images/bang-bang.jpg" alt="¡Bang! ¡Bang!... Estás Liquidado" onerror="this.style.display='none'">
+      </div>
+      <h3>¡Bang! ¡Bang!... Estás Liquidado</h3>
+      <p class="disco-año">1989</p>
+      <p class="disco-desc">Uno de los discos con mayor rotación de clásicos en vivo de toda su discografía.</p>
+    </article>
+
+    <article class="disco-card">
+      <div class="disco-tapa tapa-5">
+        <img src="images/mosca-sopa.jpg" alt="La Mosca y la Sopa" onerror="this.style.display='none'">
+      </div>
+      <h3>La Mosca y la Sopa</h3>
+      <p class="disco-año">1991</p>
+      <p class="disco-desc">Editado en plena etapa de estadios, ya con la banda convertida en fenómeno de masas del under.</p>
+    </article>
+
+    <article class="disco-card">
+      <div class="disco-tapa tapa-6">
+        <img src="images/en-directo.jpg" alt="En Directo" onerror="this.style.display='none'">
+      </div>
+      <h3>En Directo</h3>
+      <p class="disco-año">1992 · En vivo</p>
+      <p class="disco-desc">Único álbum en vivo oficial de la banda, grabado en el Teatro de Verano de Montevideo y en el estadio Obras Sanitarias de Buenos Aires.</p>
+    </article>
+
+    <article class="disco-card">
+      <div class="disco-tapa tapa-1">
+        <img src="images/lobo-cordero.jpg" alt="Lobo Suelto, Cordero Atado" onerror="this.style.display='none'">
+      </div>
+      <h3>Lobo Suelto, Cordero Atado</h3>
+      <p class="disco-año">1993</p>
+      <p class="disco-desc">Doble álbum que amplía el universo sonoro de la banda hacia climas más experimentales.</p>
+    </article>
+
+    <article class="disco-card">
+      <div class="disco-tapa tapa-2">
+        <img src="images/luzbelito.jpg" alt="Luzbelito" onerror="this.style.display='none'">
+      </div>
+      <h3>Luzbelito</h3>
+      <p class="disco-año">1996</p>
+      <p class="disco-desc">Uno de los discos más queridos por el fanatismo Redondo, editado en plena etapa de estadios repletos.</p>
+    </article>
+
+    <article class="disco-card">
+      <div class="disco-tapa tapa-3">
+        <img src="images/ultimo-bondi.jpg" alt="Último Bondi a Finisterre" onerror="this.style.display='none'">
+      </div>
+      <h3>Último Bondi a Finisterre</h3>
+      <p class="disco-año">1998</p>
+      <p class="disco-desc">Penúltimo álbum de estudio, con un sonido más maduro y letras cada vez más herméticas.</p>
+    </article>
+
+    <article class="disco-card">
+      <div class="disco-tapa tapa-4">
+        <img src="images/momo-sampler.jpg" alt="Momo Sampler" onerror="this.style.display='none'">
+      </div>
+      <h3>Momo Sampler</h3>
+      <p class="disco-año">2000</p>
+      <p class="disco-desc">El último disco de estudio de la banda antes de la separación en 2001.</p>
     </article>
 
   </div>
 </section>
 
-<section class="soporte" id="soporte">
-  <h2>Soporte</h2>
-  <p class="soporte-sub">¿Problemas con una descarga, un pago o tu cuenta? Empezá por acá.</p>
-
-  <div class="soporte-grid">
-    <div class="soporte-card">
-      <h4>No me llegó el juego</h4>
-      <p>Revisá la sección "Mis compras" con la cuenta que usaste para pagar. Si pasaron más de 15 minutos y no aparece, escribinos.</p>
-    </div>
-    <div class="soporte-card">
-      <h4>Problemas de pago</h4>
-      <p>Si el pago se descontó pero la compra no figura, no vuelvas a pagar: contactanos con el comprobante y lo resolvemos.</p>
-    </div>
-    <div class="soporte-card">
-      <h4>Reembolsos</h4>
-      <p>Podés pedir reembolso dentro de las 48 horas de la compra, siempre que no hayas activado el juego.</p>
-    </div>
+<section class="legado" id="legado">
+  <div class="section-header light">
+    <p class="eyebrow">// el legado</p>
+    <h2>Por qué siguen siendo una religión</h2>
   </div>
 
-  <button class="btn-primary btn-soporte" onclick="abrirModal()">Escribir a soporte</button>
+  <div class="legado-grid">
+    <div class="legado-card">
+      <h4>Sin TV, sin entrevistas</h4>
+      <p>La banda construyó una carrera masiva evitando casi por completo los medios masivos, algo inédito para su nivel de convocatoria en la Argentina de los 80 y 90.</p>
+    </div>
+    <div class="legado-card">
+      <h4>Identidad visual propia</h4>
+      <p>El trabajo gráfico de Rocambole en las tapas y afiches creó un universo estético reconocible al instante, con la luna y la paleta roja y negra como sello.</p>
+    </div>
+    <div class="legado-card">
+      <h4>Un público que se volvió cultura</h4>
+      <p>El fanatismo redondo generó su propio folclore: rituales antes de los shows, remeras, códigos compartidos entre generaciones de seguidores.</p>
+    </div>
+    <div class="legado-card">
+      <h4>Influencia en el rock actual</h4>
+      <p>Bandas posteriores del rock argentino citan a Los Redondos como referencia ineludible, tanto por el sonido como por la actitud de independencia total.</p>
+    </div>
+  </div>
 </section>
 
 <footer class="site-footer">
-  <p>PixelVault — todos los juegos son de entrega digital inmediata.</p>
-  <p class="fine">© 2026 PixelVault. Este es un sitio de demostración.</p>
+  <p>Página de fan hecha con Claude. No es un sitio oficial de la banda.</p>
+  <p class="fine">Los nombres, discos e imágenes de Patricio Rey y sus Redonditos de Ricota pertenecen a sus respectivos titulares de derechos.</p>
 </footer>
-
-<!-- Modal de contacto -->
-<div class="modal-overlay" id="modalOverlay" onclick="cerrarModalFuera(event)">
-  <div class="modal">
-    <button class="modal-close" onclick="cerrarModal()">✕</button>
-
-    <div id="formView">
-      <h3>Contactar a soporte</h3>
-      <p class="modal-sub">Te respondemos dentro de las 24 horas hábiles.</p>
-      <form id="soporteForm" onsubmit="enviarSoporte(event)">
-        <label>Nombre</label>
-        <input type="text" required placeholder="Tu nombre">
-
-        <label>Email</label>
-        <input type="email" required placeholder="tu@email.com">
-
-        <label>Mensaje</label>
-        <textarea required placeholder="Contanos qué pasó..." rows="4"></textarea>
-
-        <button type="submit" class="btn-primary btn-full">Enviar mensaje</button>
-      </form>
-    </div>
-
-    <div id="successView" class="success-view" style="display:none;">
-      <p class="success-icon">✓</p>
-      <h3>¡Listo!</h3>
-      <p class="modal-sub">Recibimos tu mensaje. Te vamos a contestar por mail a la brevedad.</p>
-      <button class="btn-primary btn-full" onclick="cerrarModal()">Cerrar</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  let carrito = [];
-
-  function addToCart(boton) {
-    const card = boton.closest('.game-card');
-    const nombre = card.querySelector('h3').textContent;
-    const precio = parseInt(card.dataset.precio, 10);
-
-    carrito.push({ nombre, precio });
-    actualizarCarrito();
-
-    const cart = document.getElementById('cart');
-    cart.classList.remove('bump');
-    void cart.offsetWidth;
-    cart.classList.add('bump');
-  }
-
-  function actualizarCarrito() {
-    document.getElementById('cartCount').textContent = carrito.length;
-
-    const lista = document.getElementById('cartList');
-    const totalEl = document.getElementById('cartTotal');
-
-    if (carrito.length === 0) {
-      lista.innerHTML = '<li class="cart-empty">Todavía no agregaste nada.</li>';
-      totalEl.textContent = '$0';
-      return;
-    }
-
-    lista.innerHTML = carrito.map(item =>
-      `<li><span>${item.nombre}</span><span>$${item.precio.toLocaleString('es-AR')}</span></li>`
-    ).join('');
-
-    const total = carrito.reduce((acc, item) => acc + item.precio, 0);
-    totalEl.textContent = '$' + total.toLocaleString('es-AR');
-  }
-
-  function vaciarCarrito() {
-    carrito = [];
-    actualizarCarrito();
-  }
-
-  function toggleCarrito() {
-    document.getElementById('cartDropdown').classList.toggle('open');
-  }
-
-  document.addEventListener('click', function(e) {
-    const wrapper = document.querySelector('.cart-wrapper');
-    if (!wrapper.contains(e.target)) {
-      document.getElementById('cartDropdown').classList.remove('open');
-    }
-  });
-
-  function filtrarJuegos() {
-    const texto = document.getElementById('searchInput').value.toLowerCase().trim();
-    const cards = document.querySelectorAll('#gameGrid .game-card');
-    let algunoVisible = false;
-
-    cards.forEach(card => {
-      const nombre = card.dataset.nombre;
-      if (nombre.includes(texto)) {
-        card.style.display = '';
-        algunoVisible = true;
-      } else {
-        card.style.display = 'none';
-      }
-    });
-
-    document.getElementById('noResults').style.display = algunoVisible ? 'none' : 'block';
-  }
-
-  function mostrarTodos() {
-    document.getElementById('searchInput').value = '';
-    filtrarJuegos();
-  }
-
-  // ---------- Modal de soporte ----------
-  function abrirModal() {
-    document.getElementById('modalOverlay').classList.add('open');
-    document.getElementById('formView').style.display = 'block';
-    document.getElementById('successView').style.display = 'none';
-    document.getElementById('soporteForm').reset();
-  }
-
-  function cerrarModal() {
-    document.getElementById('modalOverlay').classList.remove('open');
-  }
-
-  function cerrarModalFuera(e) {
-    if (e.target.id === 'modalOverlay') cerrarModal();
-  }
-
-  function enviarSoporte(e) {
-    e.preventDefault();
-    document.getElementById('formView').style.display = 'none';
-    document.getElementById('successView').style.display = 'block';
-  }
-</script>
 
 </body>
 </html>
