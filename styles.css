@@ -260,12 +260,15 @@ h1, h2, h3, .nav-logo, .btn-primary, .btn-outline {
 .miembro-foto {
   height: 220px;
   position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
 }
-.miembro-foto img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.miembro-foto .icono {
+  width: 45%;
+  height: 45%;
+  opacity: 0.9;
 }
 .foto-1 { background: linear-gradient(150deg, var(--red), #2a0505); }
 .foto-2 { background: linear-gradient(150deg, #7a0c14, #0d0000); }
@@ -337,28 +340,28 @@ h1, h2, h3, .nav-logo, .btn-primary, .btn-outline {
   transform: translate(-4px,-4px);
   box-shadow: 10px 10px 0 var(--red);
 }
-.disco-card.destacado-disco { border-color: var(--red); }
 
 .disco-tapa {
   height: 200px;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
 }
-.disco-tapa img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.disco-tapa .vinilo { width: 65%; height: 65%; }
+.disco-inicial {
+  fill: var(--cream);
+  font-family: 'Anton', sans-serif;
+  font-size: 13px;
 }
-.tapa-1 { background: linear-gradient(160deg, var(--red), #1a0303); }
-.tapa-2 {
-  background:
-    radial-gradient(circle at 70% 30%, var(--cream) 0 12%, transparent 13%),
-    linear-gradient(160deg, #8b1520, #0d0000);
-}
-.tapa-3 { background: linear-gradient(160deg, #5c0f0f, #170606); }
-.tapa-4 { background: linear-gradient(160deg, #7a0c14, #0d0000); }
-.tapa-5 { background: linear-gradient(160deg, #c1121f, #2a0505); }
-.tapa-6 { background: linear-gradient(160deg, #4a0a0a, #0d0000); }
+
+.placa-1 { background: linear-gradient(160deg, var(--red), #1a0303); }
+.placa-2 { background: linear-gradient(160deg, #8b1520, #0d0000); }
+.placa-3 { background: linear-gradient(160deg, #5c0f0f, #170606); }
+.placa-4 { background: linear-gradient(160deg, #7a0c14, #0d0000); }
+.placa-5 { background: linear-gradient(160deg, #c1121f, #2a0505); }
+.placa-6 { background: linear-gradient(160deg, #4a0a0a, #0d0000); }
+.disco-tapa.destacada { box-shadow: inset 0 0 40px rgba(255,255,255,0.08); }
 
 .disco-card h3 { font-size: 1.1rem; padding: 1.2rem 1.2rem 0.2rem; }
 .disco-año {
