@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PixelVault — Juegos para PC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">PIXEL<span>VAULT</span></div>
+  <nav class="nav-links">
+    <a href="#catalogo">Catálogo</a>
+    <a href="#ofertas">Ofertas</a>
+    <a href="#soporte">Soporte</a>
+  </nav>
+
+  <div class="cart-wrapper">
+    <button class="cart" id="cart" onclick="toggleCarrito()">
+      <span class="cart-icon">🎮</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <div class="cart-dropdown" id="cartDropdown">
+      <h4>Tu carrito</h4>
+      <ul class="cart-list" id="cartList">
+        <li class="cart-empty">Todavía no agregaste nada.</li>
+      </ul>
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span id="cartTotal">$0</span>
+      </div>
+      <button class="btn-clear" onclick="vaciarCarrito()">Vaciar carrito</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">// biblioteca digital</p>
+    <h1>Insertá ficha.<br>Empezá a jugar.</h1>
+    <p class="hero-sub">Descarga instantánea, sin cajas físicas, sin esperar el envío. Tu próximo juego está a un clic.</p>
+    <a href="#catalogo" class="btn-primary">Ver catálogo</a>
+  </div>
+  <div class="hero-cartridge">
+    <div class="cartridge-shape big"></div>
+  </div>
+</section>
+
+<section class="catalogo" id="catalogo">
+  <div class="catalogo-header">
+    <h2>Catálogo</h2>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar juego..." oninput="filtrarJuegos()">
+      <button class="btn-search" onclick="mostrarTodos()">Ver todos</button>
+    </div>
+  </div>
+
+  <p class="no-results" id="noResults" style="display:none;">No encontramos ningún juego con ese nombre.</p>
+
+  <div class="grid" id="gameGrid">
+
+    <article class="game-card" data-nombre="resident evil 4" data-precio="7499">
+      <div class="cover cover-1">
+        <img src="images/resident-evil-4.jpg" alt="Resident Evil 4" onerror="this.style.display='none'">
+        <span class="tag">Terror</span>
+      </div>
+      <div class="card-body">
+        <h3>Resident Evil 4</h3>
+        <p class="meta">Survival horror · Capcom</p>
+        <div class="price-row">
+          <span class="price">$7.499</span>
+          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="game-card" data-nombre="hogwarts legacy" data-precio="8999">
+      <div class="cover cover-2">
+        <img src="images/hogwarts-legacy.jpg" alt="Hogwarts Legacy" onerror="this.style.display='none'">
+        <span class="tag">RPG</span>
+      </div>
+      <div class="card-body">
+        <h3>Hogwarts Legacy</h3>
+        <p class="meta">Mundo abierto · WB Games</p>
+        <div class="price-row">
+          <span class="price">$8.999</span>
+          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="game-card" data-nombre="elden ring" data-precio="9499">
+      <div class="cover cover-3">
+        <img src="images/elden-ring.jpg" alt="Elden Ring" onerror="this.style.display='none'">
+        <span class="tag">RPG</span>
+      </div>
+      <div class="card-body">
+        <h3>Elden Ring</h3>
+        <p class="meta">Souls-like · FromSoftware</p>
+        <div class="price-row">
+          <span class="price">$9.499</span>
+          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="game-card" data-nombre="grand theft auto v" data-precio="5999">
+      <div class="cover cover-4">
+        <img src="images/gta-v.jpg" alt="Grand Theft Auto V" onerror="this.style.display='none'">
+        <span class="tag">Acción</span>
+      </div>
+      <div class="card-body">
+        <h3>Grand Theft Auto V</h3>
+        <p class="meta">Mundo abierto · Rockstar</p>
+        <div class="price-row">
+          <span class="price">$5.999</span>
+          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="game-card" data-nombre="call of duty black ops 6" data-precio="10499">
+      <div class="cover cover-5">
+        <img src="images/cod-bo6.jpg" alt="Call of Duty Black Ops 6" onerror="this.style.display='none'">
+        <span class="tag">Shooter</span>
+      </div>
+      <div class="card-body">
+        <h3>Call of Duty: Black Ops 6</h3>
+        <p class="meta">Multijugador · Activision</p>
+        <div class="price-row">
+          <span class="price">$10.499</span>
+          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="game-card" data-nombre="cyberpunk 2077" data-precio="7999">
+      <div class="cover cover-6">
+        <img src="images/cyberpunk-2077.jpg" alt="Cyberpunk 2077" onerror="this.style.display='none'">
+        <span class="tag">RPG</span>
+      </div>
+      <div class="card-body">
+        <h3>Cyberpunk 2077</h3>
+        <p class="meta">Mundo abierto · CD Projekt</p>
+        <div class="price-row">
+          <span class="price">$7.999</span>
+          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="game-card" data-nombre="god of war ragnarok" data-precio="8499">
+      <div class="cover cover-1">
+        <img src="images/god-of-war-ragnarok.jpg" alt="God of War Ragnarök" onerror="this.style.display='none'">
+        <span class="tag">Acción</span>
+      </div>
+      <div class="card-body">
+        <h3>God of War Ragnarök</h3>
+        <p class="meta">Aventura · Santa Monica</p>
+        <div class="price-row">
+          <span class="price">$8.499</span>
+          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="game-card" data-nombre="ea sports fc 25" data-precio="6499">
+      <div class="cover cover-4">
+        <img src="images/ea-fc-25.jpg" alt="EA Sports FC 25" onerror="this.style.display='none'">
+        <span class="tag">Deportes</span>
+      </div>
+      <div class="card-body">
+        <h3>EA Sports FC 25</h3>
+        <p class="meta">Fútbol · EA</p>
+        <div class="price-row">
+          <span class="price">$6.499</span>
+          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="ofertas" id="ofertas">
+  <div class="catalogo-header">
+    <h2>Ofertas</h2>
+  </div>
+  <p class="soporte-sub">Precio caído por tiempo limitado. Se llevan el descuento al momento de comprar.</p>
+
+  <div class="grid">
+
+    <article class="game-card" data-precio="4499">
+      <div class="cover cover-3">
+        <img src="images/elden-ring.jpg" alt="Elden Ring" onerror="this.style.display='none'">
+        <span class="tag oferta-tag">-40%</span>
+      </div>
+      <div class="card-body">
+        <h3>Elden Ring</h3>
+        <p class="meta">Souls-like · FromSoftware</p>
+        <div class="price-row">
+          <div class="price-oferta">
+            <span class="price-old">$9.499</span>
+            <span class="price">$4.499</span>
+          </div>
+          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="game-card" data-precio="3999">
+      <div class="cover cover-6">
+        <img src="images/cyberpunk-2077.jpg" alt="Cyberpunk 2077" onerror="this.style.display='none'">
+        <span class="tag oferta-tag">-50%</span>
+      </div>
+      <div class="card-body">
+        <h3>Cyberpunk 2077</h3>
+        <p class="meta">Mundo abierto · CD Projekt</p>
+        <div class="price-row">
+          <div class="price-oferta">
+            <span class="price-old">$7.999</span>
+            <span class="price">$3.999</span>
+          </div>
+          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="game-card" data-precio="2999">
+      <div class="cover cover-4">
+        <img src="images/gta-v.jpg" alt="Grand Theft Auto V" onerror="this.style.display='none'">
+        <span class="tag oferta-tag">-50%</span>
+      </div>
+      <div class="card-body">
+        <h3>Grand Theft Auto V</h3>
+        <p class="meta">Mundo abierto · Rockstar</p>
+        <div class="price-row">
+          <div class="price-oferta">
+            <span class="price-old">$5.999</span>
+            <span class="price">$2.999</span>
+          </div>
+          <button class="btn-buy" onclick="addToCart(this)">Comprar</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="soporte" id="soporte">
+  <h2>Soporte</h2>
+  <p class="soporte-sub">¿Problemas con una descarga, un pago o tu cuenta? Empezá por acá.</p>
+
+  <div class="soporte-grid">
+    <div class="soporte-card">
+      <h4>No me llegó el juego</h4>
+      <p>Revisá la sección "Mis compras" con la cuenta que usaste para pagar. Si pasaron más de 15 minutos y no aparece, escribinos.</p>
+    </div>
+    <div class="soporte-card">
+      <h4>Problemas de pago</h4>
+      <p>Si el pago se descontó pero la compra no figura, no vuelvas a pagar: contactanos con el comprobante y lo resolvemos.</p>
+    </div>
+    <div class="soporte-card">
+      <h4>Reembolsos</h4>
+      <p>Podés pedir reembolso dentro de las 48 horas de la compra, siempre que no hayas activado el juego.</p>
+    </div>
+  </div>
+
+  <button class="btn-primary btn-soporte" onclick="abrirModal()">Escribir a soporte</button>
+</section>
+
+<footer class="site-footer">
+  <p>PixelVault — todos los juegos son de entrega digital inmediata.</p>
+  <p class="fine">© 2026 PixelVault. Este es un sitio de demostración.</p>
+</footer>
+
+<!-- Modal de contacto -->
+<div class="modal-overlay" id="modalOverlay" onclick="cerrarModalFuera(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="cerrarModal()">✕</button>
+
+    <div id="formView">
+      <h3>Contactar a soporte</h3>
+      <p class="modal-sub">Te respondemos dentro de las 24 horas hábiles.</p>
+      <form id="soporteForm" onsubmit="enviarSoporte(event)">
+        <label>Nombre</label>
+        <input type="text" required placeholder="Tu nombre">
+
+        <label>Email</label>
+        <input type="email" required placeholder="tu@email.com">
+
+        <label>Mensaje</label>
+        <textarea required placeholder="Contanos qué pasó..." rows="4"></textarea>
+
+        <button type="submit" class="btn-primary btn-full">Enviar mensaje</button>
+      </form>
+    </div>
+
+    <div id="successView" class="success-view" style="display:none;">
+      <p class="success-icon">✓</p>
+      <h3>¡Listo!</h3>
+      <p class="modal-sub">Recibimos tu mensaje. Te vamos a contestar por mail a la brevedad.</p>
+      <button class="btn-primary btn-full" onclick="cerrarModal()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  let carrito = [];
+
+  function addToCart(boton) {
+    const card = boton.closest('.game-card');
+    const nombre = card.querySelector('h3').textContent;
+    const precio = parseInt(card.dataset.precio, 10);
+
+    carrito.push({ nombre, precio });
+    actualizarCarrito();
+
+    const cart = document.getElementById('cart');
+    cart.classList.remove('bump');
+    void cart.offsetWidth;
+    cart.classList.add('bump');
+  }
+
+  function actualizarCarrito() {
+    document.getElementById('cartCount').textContent = carrito.length;
+
+    const lista = document.getElementById('cartList');
+    const totalEl = document.getElementById('cartTotal');
+
+    if (carrito.length === 0) {
+      lista.innerHTML = '<li class="cart-empty">Todavía no agregaste nada.</li>';
+      totalEl.textContent = '$0';
+      return;
+    }
+
+    lista.innerHTML = carrito.map(item =>
+      `<li><span>${item.nombre}</span><span>$${item.precio.toLocaleString('es-AR')}</span></li>`
+    ).join('');
+
+    const total = carrito.reduce((acc, item) => acc + item.precio, 0);
+    totalEl.textContent = '$' + total.toLocaleString('es-AR');
+  }
+
+  function vaciarCarrito() {
+    carrito = [];
+    actualizarCarrito();
+  }
+
+  function toggleCarrito() {
+    document.getElementById('cartDropdown').classList.toggle('open');
+  }
+
+  document.addEventListener('click', function(e) {
+    const wrapper = document.querySelector('.cart-wrapper');
+    if (!wrapper.contains(e.target)) {
+      document.getElementById('cartDropdown').classList.remove('open');
+    }
+  });
+
+  function filtrarJuegos() {
+    const texto = document.getElementById('searchInput').value.toLowerCase().trim();
+    const cards = document.querySelectorAll('#gameGrid .game-card');
+    let algunoVisible = false;
+
+    cards.forEach(card => {
+      const nombre = card.dataset.nombre;
+      if (nombre.includes(texto)) {
+        card.style.display = '';
+        algunoVisible = true;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    document.getElementById('noResults').style.display = algunoVisible ? 'none' : 'block';
+  }
+
+  function mostrarTodos() {
+    document.getElementById('searchInput').value = '';
+    filtrarJuegos();
+  }
+
+  // ---------- Modal de soporte ----------
+  function abrirModal() {
+    document.getElementById('modalOverlay').classList.add('open');
+    document.getElementById('formView').style.display = 'block';
+    document.getElementById('successView').style.display = 'none';
+    document.getElementById('soporteForm').reset();
+  }
+
+  function cerrarModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+  }
+
+  function cerrarModalFuera(e) {
+    if (e.target.id === 'modalOverlay') cerrarModal();
+  }
+
+  function enviarSoporte(e) {
+    e.preventDefault();
+    document.getElementById('formView').style.display = 'none';
+    document.getElementById('successView').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
